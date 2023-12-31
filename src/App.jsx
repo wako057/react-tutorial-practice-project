@@ -52,12 +52,12 @@ function App() {
     });
   }
 
-  function handleDeletedProject(id) {
+  function handleDeletedProject() {
     setProjectsState(prevState => {
       return {
         ...prevState,
         selectedProjectId: undefined,
-        projects: prevState.projects.filter((project) => project.id !== id)
+        projects: prevState.projects.filter((project) => project.id !== prevState.selectedProjectId)
       };
     });
   }
