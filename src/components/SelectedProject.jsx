@@ -23,7 +23,7 @@ export default function SelectedProject({project, onDelete, onAddTask, onDeleteT
         <p className="text-stone-600 whitespace-pre-wrap">{project.description}</p>
       </header>
 
-      <Task onAdd={onAddTask} onDelete={onDelete} tasks={tasks}/>
+      <Task onAdd={onAddTask} onDelete={onDeleteTask} tasks={tasks}/>
     </div>
   );
 }
