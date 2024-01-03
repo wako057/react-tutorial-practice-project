@@ -73,6 +73,7 @@ function App() {
 
   function handleSelectedProject(id) {
     setProjectsState(prevState => {
+      console.log("new proecjt selected: ", id);
       return {
         ...prevState,
         selectedProjectId: id
@@ -98,6 +99,7 @@ function App() {
     onAddTask={handleAddTask}
     onDeleteTask={handleDeleteTask}
     tasks={projectsState.tasks}
+    selectedProjectId={projectsState.selectedProjectId}
   />;
 
   if (projectsState.selectedProjectId === null) {
@@ -108,7 +110,7 @@ function App() {
   } else if (projectsState.selectedProjectId === undefined ) {
     content = <NoProjectSelected onStartAddProject={handleStartAddProject}/>
   }
-
+console.log('projectState: ', projectsState);
   return (
     <main className="h-screen my-8 flex gap-8">
       <ProjectsSideBar
